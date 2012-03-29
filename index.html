@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="tiles.js"></script>
+	</head>
+	<body>
+		<style type="text/css">
+			#boardContainer
+			{
+				float: left;
+				
+			}
+			#customize
+			{
+				float: left;
+				padding: 20px;
+				height: 400px;
+				width: 300px;
+			}
+			#output
+			{
+				float: left;
+			}
+		</style>
+
+		<script>
+			$(document).ready(function() {
+
+    				$("#updateButton").click( function() {
+					BuildMosaic("imageBoard", $("#purl").val(), $("#terms").val());
+				});
+
+			});
+  		</script>
+		
+		<div id="boardContainer">
+			<canvas id="imageBoard" width="400px" height="400px">Nope!</canvas>
+		</div>
+		<div id="customize">
+			<label for="terms">Search Term(s)</label><br />
+			<input type="text" name="terms" id="terms" value="fish" />
+			<br /><br />
+			<label for="purl">Puzzle Image</label><br />
+			<select name="purl" id="purl">
+				<option value="bacon.jpg">Bacon</option>
+				<option value="bird.jpg">Birds</option>
+				<option value="additionalbacon.jpg">Additional Bacon</option>
+				<option value="familymonopoly.jpg">Family Monopoly</option>
+				<option value="freedom.jpg">Freedom</option>
+			</select>
+			<br /><br />
+			<input type="button" id="updateButton" value="Build" />
+		</div>
+		<div id="output">
+			
+		</div>
+	</body>
+</html>
